@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>微信号商品详情 | 实名微信号购买 - 微信小号自助购买平台</title>
+    <meta name="description" content="微信号商品详情页，展示实名微信号、海外微信号、原机微信号、微信老号等商品价格、库存、账号年限、实名状态和支付功能，支持在线下单、USDT-TRC20 自动检测到账、支付成功后资料交付和邮箱查询订单。" />
+    <meta name="keywords" content="微信号商品详情,微信号价格,微信号购买,微信号出售,实名微信号购买,海外微信号购买,原机微信号购买,微信小号购买,微信号自助购买" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="微信号商品详情 - 实名微信号自助购买" />
+    <meta property="og:description" content="查看微信号商品价格、库存、账号年限和实名状态，支持 USDT-TRC20 自动检测到账和支付成功后资料交付。" />
+    <meta property="og:type" content="product" />
+    <meta property="og:image" content="assets/virtual-goods-hero.png" />
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="返回数贸集市首页">
+        <img class="brand-logo" src="assets/logo.svg" alt="" />
+        <span>数贸集市</span>
+      </a>
+      <nav class="nav">
+        <a href="./#products">商品</a>
+        <a href="query/">邮箱查询</a>
+        <a href="./#notice">购买须知</a> 
+      </nav>
+    </header>
+
+    <main class="detail-page">
+      <nav class="detail-breadcrumb" aria-label="当前位置">
+        <a href="./">首页</a>
+        <span>/</span>
+        <a href="./#products">产品列表</a>
+        <span>/</span>
+        <strong id="breadcrumbName">商品详情</strong>
+      </nav>
+
+      <section class="detail-layout detail-two-column">
+        <article class="buy-panel detail-main-panel product-info-panel" aria-labelledby="productName">
+          <p class="section-kicker" id="productCategory">虚拟商品</p>
+          <h1 id="productName">虚拟商品</h1>
+          <p class="detail-desc" id="productDesc">下单后生成 USDT 支付信息，支付成功后展示交付资料。</p>
+
+          <div class="price-row">
+            <span>单价</span>
+            <strong id="productPrice">0.00 USDT</strong>
+          </div>
+
+          <div class="price-row stock-row">
+            <span>库存数量</span>
+            <strong><span id="productStock">--</span> 个</strong>
+          </div>
+
+          <div class="spec-grid" aria-label="商品属性">
+            <div>
+              <span>商品类型</span>
+              <strong id="specType">虚拟资料</strong>
+            </div>
+            <div>
+              <span>注册时长</span>
+              <strong id="specAge">满月</strong>
+            </div>
+            <div>
+              <span>实名状态</span>
+              <strong id="specRealname">已实名</strong>
+            </div>
+            <div>
+              <span>支付功能</span>
+              <strong id="specPay">支持</strong>
+            </div>
+          </div>
+
+        </article>
+
+        <aside class="buy-panel purchase-panel" aria-labelledby="purchaseTitle">
+          <form class="order-form" id="orderForm">
+            <h2 class="form-title" id="purchaseTitle">购买选项</h2>
+            <label>
+              <span>接收邮箱</span>
+              <input id="email" name="email" type="email" placeholder="name@example.com" required />
+            </label>
+
+            <label>
+              <span>购买数量</span>
+              <input id="quantity" name="quantity" type="number" min="1" step="1" value="1" required />
+            </label>
+
+            <fieldset>
+              <legend>支付方式</legend>
+              <div class="pay-options">
+                <label class="pay-option">
+                  <input type="radio" name="payMethod" value="USDT-TRC20" checked />
+                  <span>USDT</span>
+                  <small>TRC20</small>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="total-row">
+              <span>合计</span>
+              <strong id="orderTotal">0.00 USDT</strong>
+            </div>
+
+            <button class="buy-button" type="submit">立即购买</button>
+            <p class="form-note">提交后会在 Supabase 创建订单并生成支付信息；支付成功后按购买数量自动发放账号资料。</p>
+          </form>
+        </aside>
+      </section>
+
+      <section class="detail-info detail-info-ordered">
+        <div class="detail-info-wide">
+          <h2>商品详细说明</h2>
+          <p id="productLongDesc">付款成功后，系统会将兑换说明或资料发送到你的邮箱。请确认邮箱填写正确。</p>
+        </div>
+        <div>
+          <h2>交易保障</h2>
+          <p>所有订单生成唯一订单编号和精确付款金额。系统检测到匹配的 USDT-TRC20 入账后，会自动保存订单并交付资料。</p>
+        </div>
+        <div>
+          <h2>发货格式</h2>
+          <p>手机号 - 密码 - 短信验证码接收链接 - 登录教程</p>
+        </div>
+        <div>
+          <h2>温馨提示</h2>
+          <p>虚拟商品交付后请及时查收并核对资料。下单前请确认商品标题、数量、邮箱和 USDT 网络。</p>
+        </div>
+        <div>
+          <h2>邮箱查询</h2>
+          <p>下单后可到邮箱查询页面输入邮箱或订单号，从 Supabase 查看订单记录、支付状态与发货资料。</p>
+        </div>
+      </section>
+
+      <section class="related-section" aria-labelledby="relatedTitle">
+        <div class="related-head">
+          <div>
+            <p class="section-kicker">相关推荐</p>
+            <h2 id="relatedTitle">相关商品</h2>
+          </div>
+          <a class="ghost-button" href="./#products">查看全部</a>
+        </div>
+        <div class="related-grid" id="relatedProducts"></div>
+      </section>
+    </main>
+
+    <div class="modal-backdrop" id="paymentModal" aria-hidden="true">
+      <section class="payment-modal" role="dialog" aria-modal="true" aria-labelledby="paymentTitle">
+        <button class="modal-close" type="button" id="closeModal" aria-label="关闭支付信息">×</button>
+        <p class="section-kicker">等待支付</p>
+        <h2 id="paymentTitle">USDT 支付信息</h2>
+        <div class="countdown" id="countdown">15:00</div>
+
+        <dl class="payment-list">
+          <div>
+            <dt>订单编号</dt>
+            <dd id="orderNo">--</dd>
+          </div>
+          <div>
+            <dt>支付金额</dt>
+            <dd id="payAmount">--</dd>
+          </div>
+          <div>
+            <dt>支付网络</dt>
+            <dd id="payNetwork">USDT-TRC20</dd>
+          </div>
+          <div>
+            <dt>收款地址</dt>
+            <dd class="wallet-address" id="walletAddress">TZA2Gv2CoWFRRNjcoPwEkjvxwd7WyiRyBW</dd>
+          </div>
+          <div>
+            <dt>接收邮箱</dt>
+            <dd id="payEmail">--</dd>
+          </div>
+        </dl>
+
+        <div class="qr-box" aria-label="USDT TRC20 收款二维码">
+          <img src="assets/usdt-trc20-qr.png" alt="USDT TRC20 收款二维码" />
+          <small>请使用 USDT-TRC20 转账</small>
+        </div>
+
+        <p class="verify-message" id="verifyMessage" role="status" aria-live="polite"></p>
+
+        <div class="modal-actions">
+          <button class="copy-button" type="button" id="copyAddress">复制地址</button>
+          <button class="success-button" type="button" id="confirmPaid">我已支付</button>
+          <a class="query-link" href="query/" id="modalQueryLink">查看订单</a>
+        </div>
+        <div class="delivery-result" id="paymentDelivery" hidden>
+          <div class="delivery-result-head">
+            <strong>支付成功，账号资料</strong>
+            <button class="ghost-button" type="button" id="copyPaymentDelivery">复制资料</button>
+          </div>
+          <p class="delivery-format">发货格式：手机号 - 密码 - 短信验证码接收链接 - 登录教程</p>
+          <pre id="paymentDeliveryText"></pre>
+        </div>
+        <p class="modal-note">请按页面显示的精确 USDT 金额转账，系统会自动检测到账并交付资料。</p>
+      </section>
+    </div>
+
+    <footer class="site-footer">
+      <span>© 2026 数贸集市</span>
+      <span>虚拟商品 · USDT 支付 · 邮箱交付</span>
+    </footer>
+
+    <script src="supabase-config.js"></script>
+    <script src="supabase-orders.js"></script>
+    <script src="product-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

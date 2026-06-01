@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>订单查询 | 微信号购买订单邮箱查询 - 微信小号自助购买平台</title>
+    <meta name="description" content="微信号购买订单查询页面，支持通过下单邮箱或订单号查询微信小号、实名微信号、海外微信号、原机微信号等自助购买订单状态、支付金额、收款网络和交付资料。" />
+    <meta name="keywords" content="微信号订单查询,微信号购买查询,邮箱查询订单,微信小号订单查询,实名微信号订单,微信号自助购买平台" />
+    <meta name="robots" content="noindex,follow" />
+    <meta property="og:title" content="微信号购买订单查询 - 邮箱查询订单" />
+    <meta property="og:description" content="输入下单邮箱或订单号，查询微信号自助购买订单状态、支付金额和交付资料。" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="数贸集市首页">
+        <img class="brand-logo" src="assets/logo.svg" alt="" />
+        <span>数贸集市</span>
+      </a>
+      <nav class="nav">
+        <a href="./#products">商品</a>
+        <a class="is-current" href="query/">邮箱查询</a>
+        <a href="./#notice">购买须知</a> 
+      </nav>
+    </header>
+
+    <main class="query-page">
+      <section class="query-hero">
+        <p class="section-kicker"><span class="mini-icon">邮</span> 订单查询</p>
+        <h1>邮箱查询订单</h1>
+        <p>输入下单邮箱或订单号，从 Supabase 查询订单记录、支付金额、网络和状态。</p>
+      </section>
+
+      <section class="query-panel" aria-labelledby="queryTitle">
+        <div>
+          <h2 id="queryTitle">查询条件</h2>
+          <p>订单记录保存在 Supabase，可在不同设备通过邮箱或订单号自助核对。</p>
+        </div>
+        <form class="query-form" id="queryForm">
+          <label>
+            <span>邮箱或订单号</span>
+            <input id="queryValue" type="text" placeholder="name@example.com 或 DM1234567890" autocomplete="email" required />
+          </label>
+          <div class="query-actions">
+            <button class="buy-button" type="submit">立即查询</button>
+            <button class="ghost-button" id="showAll" type="button">查询说明</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="query-results" aria-live="polite">
+        <div class="results-head">
+          <div>
+            <p class="section-kicker">查询结果</p>
+            <h2 id="resultTitle">暂无查询</h2>
+          </div>
+          <span class="status-pill" id="resultCount">0 条</span>
+        </div>
+        <div class="order-list" id="orderList">
+          <article class="empty-state">
+            <span class="empty-icon">?</span>
+            <h3>还没有查询结果</h3>
+            <p>先在商品详情页提交一个订单，再回到这里用邮箱查询。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 数贸集市</span>
+      <span>虚拟商品 · USDT 支付 · 邮箱交付</span>
+    </footer>
+
+    <script src="supabase-config.js"></script>
+    <script src="supabase-orders.js"></script>
+    <script src="query.js"></script>
+  </body>
+</html>

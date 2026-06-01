@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>订单详情 | 微信号购买订单详情 - 微信小号自助购买平台</title>
+    <meta name="description" content="微信号购买订单详情页面，展示订单编号、商品名称、支付状态、USDT-TRC20 收款地址、交易哈希、支付金额和账号资料交付内容。" />
+    <meta name="keywords" content="微信号订单详情,微信号购买订单,微信号支付状态,微信号交付资料,实名微信号订单查询" />
+    <meta name="robots" content="noindex,follow" />
+    <meta property="og:title" content="微信号购买订单详情" />
+    <meta property="og:description" content="查看微信号购买订单状态、支付信息和账号资料交付内容。" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="数贸集市首页">
+        <img class="brand-logo" src="assets/logo.svg" alt="" />
+        <span>数贸集市</span>
+      </a>
+      <nav class="nav">
+        <a href="./#products">商品</a>
+        <a href="query/">邮箱查询</a>
+        <a href="./#notice">购买须知</a> 
+      </nav>
+    </header>
+
+    <main class="order-detail-page">
+      <nav class="detail-breadcrumb" aria-label="当前位置">
+        <a href="./">首页</a>
+        <span>/</span>
+        <a href="query/">订单查询</a>
+        <span>/</span>
+        <strong>订单详情</strong>
+      </nav>
+
+      <section class="order-detail-shell" id="orderDetail">
+        <div class="order-detail-head">
+          <div>
+            <p class="section-kicker">订单详情</p>
+            <h1>订单号：<span id="detailOrderNo">--</span></h1>
+          </div>
+          <span class="order-state" id="detailStatus">等待支付</span>
+        </div>
+
+        <div class="order-detail-grid">
+          <section class="detail-card">
+            <h2>订单信息</h2>
+            <dl class="detail-list">
+              <div>
+                <dt>订单编号</dt>
+                <dd id="infoOrderNo">--</dd>
+              </div>
+              <div>
+                <dt>商品名称</dt>
+                <dd id="infoProduct">--</dd>
+              </div>
+              <div>
+                <dt>订单邮箱</dt>
+                <dd id="infoEmail">--</dd>
+              </div>
+              <div>
+                <dt>购买数量</dt>
+                <dd id="infoQuantity">--</dd>
+              </div>
+              <div>
+                <dt>订单金额</dt>
+                <dd id="infoAmount">--</dd>
+              </div>
+              <div>
+                <dt>创建时间</dt>
+                <dd id="infoCreatedAt">--</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="detail-card">
+            <h2>支付信息</h2>
+            <dl class="detail-list">
+              <div>
+                <dt>支付方式</dt>
+                <dd id="payMethod">--</dd>
+              </div>
+              <div>
+                <dt>支付状态</dt>
+                <dd id="payStatus">--</dd>
+              </div>
+              <div>
+                <dt>交易哈希</dt>
+                <dd id="payTxHash">--</dd>
+              </div>
+              <div>
+                <dt>收款地址</dt>
+                <dd class="wallet-address" id="payWallet">--</dd>
+              </div>
+              <div>
+                <dt>交付方式</dt>
+                <dd>邮箱交付</dd>
+              </div>
+            </dl>
+            <button class="ghost-button copy-inline" type="button" id="copyWallet">复制收款地址</button>
+          </section>
+        </div>
+
+        <section class="delivery-card">
+          <div class="delivery-head">
+            <div>
+              <p class="section-kicker">订单账号资料信息</p>
+              <h2>交付内容</h2>
+            </div>
+            <button class="copy-button copy-delivery" type="button" id="copyDelivery">复制资料</button>
+          </div>
+          <p class="delivery-format">发货格式：手机号 - 密码 - 短信验证码接收链接 - 登录教程</p>
+          <pre class="delivery-box" id="deliveryBox">订单完成后，这里会展示账号资料或交付说明。</pre>
+        </section>
+      </section>
+
+      <section class="empty-state order-not-found" id="orderNotFound" hidden>
+        <span class="empty-icon">?</span>
+        <h3>未找到订单</h3>
+        <p>请从邮箱查询页面进入订单详情，或检查订单号是否正确。</p>
+        <a class="query-link" href="query/">返回查询</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 数贸集市</span>
+      <span>虚拟商品 · USDT 支付 · 邮箱交付</span>
+    </footer>
+
+    <script src="supabase-config.js"></script>
+    <script src="supabase-orders.js"></script>
+    <script src="order-detail.js"></script>
+  </body>
+</html>

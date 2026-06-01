@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /order-detail/
+Disallow: /success/
+Disallow: /detail-order-sn/
+
+Sitemap: https://shumaojs.com/sitemap.xml
